@@ -1,0 +1,25 @@
+# Motor Control Package - Parameter File
+# Tune the PID gains here or via rqt_reconfigure at runtime
+
+/motor_sys:
+  ros__parameters:
+    sample_time: 0.01
+    sys_gain_K: 2.16
+    sys_tau_T: 0.05
+    initial_conditions: 0.0
+
+/sp_gen:
+  ros__parameters:
+    sample_time: 0.1
+    amplitude: 2.0
+    omega: 1.0
+    signal_type: 0      # 0=sine  1=square  2=step
+
+/ctrl:
+  ros__parameters:
+    sample_time: 0.01   # Must match motor sample_time
+    kp: 1.0             # Proportional gain
+    ki: 5.0             # Integral gain
+    kd: 0.01            # Derivative gain
+    u_max:  10.0        # Saturation upper limit
+    u_min: -10.0        # Saturation lower limit
