@@ -25,10 +25,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'dc_motor    = motor_control.dc_motor:main',
-            'set_point   = motor_control.set_point:main',
-            'controller  = motor_control.controller:main',
-            'motor       = motor_control.motor:main',   # <-- NUEVO
+            'dc_motor = motor_control.dc_motor:main',
+            'set_point = motor_control.set_point:main',
+            'controller = motor_control.controller:main'
         ],
     },
 )
