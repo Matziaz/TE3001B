@@ -13,19 +13,19 @@ def generate_launch_description():
         PushRosNamespace('group1'),
 
         # Simulador (se mantiene para comparación, pero NO se usa como feedback)
-      #  Node(
-       #     name='motor_sys',
-        #    package='motor_control',
-         #   executable='dc_motor',
-          #  emulate_tty=True,
-           # output='screen',
-            #parameters=[{
-             #   'sample_time': 0.01,
-              #  'sys_gain_K': 2.16,
-               # 'sys_tau_T': 0.05,
-                #'initial_conditions': 0.0,
-            #}]
-        #),
+        Node(
+           name='motor_sys',
+           package='motor_control',
+           executable='dc_motor',
+           emulate_tty=True,
+           output='screen',
+           parameters=[{
+                'sample_time': 0.01,
+                'sys_gain_K': 2.16,
+                'sys_tau_T': 0.05,
+                'initial_conditions': 0.0,
+           }]
+        ),
 
         # Set point generator
         Node(
