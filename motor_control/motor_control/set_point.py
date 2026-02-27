@@ -1,4 +1,3 @@
-# Imports
 import rclpy
 from rclpy.node import Node
 import numpy as np
@@ -143,4 +142,4 @@ def main(args=None):
 
 
 if __name__ == '__main__':
-    main()
+    main()             
