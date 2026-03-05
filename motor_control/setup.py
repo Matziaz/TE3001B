@@ -28,7 +28,9 @@ setup(
             'dc_motor    = motor_control.dc_motor:main',
             'set_point   = motor_control.set_point:main',
             'controller  = motor_control.controller:main',
-            'motor       = motor_control.motor:main',   # <-- NUEVO
+            'motor       = motor_control.motor:main',
+            'motor_vel_relay = motor_control.motor_vel_relay:main',   # <-- NUEVO
+            
         ],
     },
 )
