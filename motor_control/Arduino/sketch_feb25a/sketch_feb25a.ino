@@ -10,8 +10,8 @@
 #include <math.h>
 
 // ===================== Pines =====================
-#define EN_A 18
-#define EN_B 19
+#define EN_A 19
+#define EN_B 18
 
 #define IN3 12  // PWM adelante
 #define IN4 13  // PWM reversa
@@ -239,7 +239,8 @@ void loop() {
 
         // rad/s = (deltaP / PPR) * 2*pi / Ts
         double w = ((double)deltaP / PULSOS_POR_VUELTA) * (2.0 * M_PI) / Ts;
-        w_rad_s = (float)w;
+        float alpha = 0.2f;
+        w_rad_s = alpha * (float)w + (1.0f - alpha) * w_rad_s;
 
         msg_vel.data = w_rad_s;
         (void)rcl_publish(&pub_vel, &msg_vel, NULL);
