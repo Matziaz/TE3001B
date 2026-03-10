@@ -11,9 +11,10 @@
 /sp_gen:
   ros__parameters:
     sample_time:  0.1       # [s] frecuencia de publicación del set-point
-    amplitude:    4.0       # [rad/s] amplitud de la señal
-    omega:        0.5       # [rad/s] frecuencia angular (solo seno/cuadrada)
-    signal_type:  2         # 0=seno  1=cuadrada  2=escalón  ← empieza con escalón
+    amplitude:    6.0       # [rad/s] amplitud de la señal
+    omega:        0.2       # [rad/s] frecuencia angular (solo seno/cuadrada)
+    signal_type:  0         # 0=seno  1=cuadrada  2=escalón  ← empieza con escalón
+    pulse_duty:   0.3
 
 # --- Nodo /Control: PID en la PC ---
 # Ts recomendado: entre t95/12 y t95/10
@@ -25,17 +26,17 @@
     kp:           1.0       # Ganancia proporcional  ← AJUSTAR con escalón
     ki:           2.0       # Ganancia integral      ← AJUSTAR para cero error
     kd:           0.0       # Ganancia derivativa    ← Empezar en 0
-    u_max:        10.0      # Límite superior de saturación [rad/s]
-    u_min:       -10.0      # Límite inferior de saturación [rad/s]
+    u_max:        15.0      # Límite superior de saturación [rad/s]
+    u_min:       -15.0      # Límite inferior de saturación [rad/s]
 
 # --- Nodo motor.py: conversión u → PWM para ESP32 ---
 /motor:
   ros__parameters:
-    u_max:        10.0      # Debe coincidir con u_max del controlador
+    u_max:        15.0      # Debe coincidir con u_max del controlador
     sample_time:  0.1       # [s]
     u_deadband:   0.3       # [rad/s] zona muerta (evita vibración en reposo)
-    pwm_min:      200       # PWM mínimo para vencer fricción estática (0-255)
-    kick_pwm:     230       # PWM de "patada" al arrancar
+    pwm_min:      50       # PWM mínimo para vencer fricción estática (0-255)
+    kick_pwm:     180       # PWM de "patada" al arrancar
     kick_time:    0.15      # [s] duración de la patada
 
 # --- Nodo dc_motor.py: simulador (referencia / comparación) ---
