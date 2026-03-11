@@ -34,10 +34,10 @@
   ros__parameters:
     u_max:        15.0      # Debe coincidir con u_max del controlador
     sample_time:  0.1       # [s]
-    u_deadband:   0.15       # [rad/s] zona muerta (evita vibración en reposo)
-    pwm_min:      0       # PWM mínimo para vencer fricción estática (0-255)
-    #kick_pwm:     180       # PWM de "patada" al arrancar
-    #kick_time:    0.15      # [s] duración de la patada
+    u_deadband:   0.05       # [rad/s] zona muerta (evita vibración en reposo)
+    pwm_min:      30       # PWM mínimo para vencer fricción estática (0-255)
+    kick_pwm:     200       # PWM de "patada" al arrancar
+    kick_time:    0.10      # [s] duración de la patada
     pwm_slew_rate: 400.0
 
 # --- Nodo dc_motor.py: simulador (referencia / comparación) ---
