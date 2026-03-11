@@ -38,13 +38,4 @@
     pwm_min:      30       # PWM mínimo para vencer fricción estática (0-255)
     kick_pwm:     200       # PWM de "patada" al arrancar
     kick_time:    0.10      # [s] duración de la patada
-    pwm_slew_rate: 400.0
-
-# --- Nodo dc_motor.py: simulador (referencia / comparación) ---
-# Puedes correrlo en paralelo para comparar simulación vs real en rqt_plot
-/motor_sys:
-  ros__parameters:
-    sample_time:        0.01
-    sys_gain_K:         4.0
-    sys_tau_T:          0.9
-    initial_conditions: 0.0
+    pwm_slew_rate: 400.0    # [PWM/s] tasa máxima de cambio de PWM (limita aceleración)

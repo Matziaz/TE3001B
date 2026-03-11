@@ -34,7 +34,7 @@ void IRAM_ATTR int_callback() {
   }
 }
 
-// Ajusta a tu encoder real (tu código usaba 408)
+// Ajusta a tu encoder real
 static const double PULSOS_POR_VUELTA = 408.0;
 
 // ===================== Muestreo =====================

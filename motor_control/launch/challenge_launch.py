@@ -103,9 +103,3 @@ def generate_launch_description():
         motor_node,
         relay_node,
     ])
-
-# (*) NOTA IMPORTANTE:
-# El relay_node requiere crear motor_vel_relay.py y registrarlo en setup.py.
-# Si prefieres evitarlo, puedes cambiar en controller.py la suscripción de
-# '/motor_output' a '/motor_vel' directamente, y eliminar el relay_node
-# de este launch. El archivo controller.py ya tiene un comentario al respecto.
