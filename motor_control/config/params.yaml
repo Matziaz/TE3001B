@@ -23,9 +23,9 @@
 /ctrl:
   ros__parameters:
     sample_time:  0.1       # [s] — igualar a sp_gen
-    kp:           1.0       # Ganancia proporcional  ← AJUSTAR con escalón
-    ki:           2.0       # Ganancia integral      ← AJUSTAR para cero error
-    kd:           0.0       # Ganancia derivativa    ← Empezar en 0
+    kp:           1.68       # Ganancia proporcional  ← AJUSTAR con escalón
+    ki:           1.65       # Ganancia integral      ← AJUSTAR para cero error
+    kd:           0.05       # Ganancia derivativa    ← Empezar en 0
     u_max:        15.0      # Límite superior de saturación [rad/s]
     u_min:       -15.0      # Límite inferior de saturación [rad/s]
 
@@ -45,6 +45,6 @@
 /motor_sys:
   ros__parameters:
     sample_time:        0.01
-    sys_gain_K:         2.16
-    sys_tau_T:          0.05
+    sys_gain_K:         4.0
+    sys_tau_T:          0.9
     initial_conditions: 0.0
